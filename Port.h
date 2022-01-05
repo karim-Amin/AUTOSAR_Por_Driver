@@ -44,15 +44,15 @@
 /*
  * Include the standard AUTOSAR types std_types.h file
  */
-#include "Std.Types.h"
+#include "Std_Types.h"
 
 /*
  * check that the two files from the same software version and AUTOSAR verion
  */
 
-#if( (PORT_SW_MAJOR_VERSION != STD_TYPES_SW_MAJOR_VERSION)\ 
-   ||(PORT_SW_MINOR_VERSION != STD_TYPES_SW_MINOR_VERSION)\
-   ||(PORT_SW_PATCH_VERSION != STD_TYPES_SW_PATCH_VERSION))
+#if ((PORT_SW_MAJOR_VERSION != STD_TYPES_SW_MAJOR_VERSION)\
+ ||  (PORT_SW_MINOR_VERSION != STD_TYPES_SW_MINOR_VERSION)\
+ ||  (PORT_SW_PATCH_VERSION != STD_TYPES_SW_PATCH_VERSION))
 
 #error "Incompatable Software versions between Port.h and Std_Types.h";
 #endif
@@ -61,7 +61,7 @@
  * check that the two files from the same AUTOSAR version 
  */
 
-#if( (PORT_AR_RELEASE_MAJOR_VERSION != STD_TYPES_AR_RELEASE_MAJOR_VERSION)\ 
+#if ((PORT_AR_RELEASE_MAJOR_VERSION != STD_TYPES_AR_RELEASE_MAJOR_VERSION)\
    ||(PORT_AR_RELEASE_MINOR_VERSION != STD_TYPES_AR_RELEASE_MINOR_VERSION)\
    ||(PORT_AR_RELEASE_PATCH_VERSION != STD_TYPES_AR_RELEASE_PATCH_VERSION))
 
@@ -133,38 +133,17 @@
 #define PORT_E_PARAM_POINTER       (uint8) 0x10
    
 /*******************************************************************************
- *                              Module Definitions                             *
- *******************************************************************************/
-
-/* GPIO Registers base addresses */
-#define GPIO_PORTA_BASE_ADDRESS           0x40004000
-#define GPIO_PORTB_BASE_ADDRESS           0x40005000
-#define GPIO_PORTC_BASE_ADDRESS           0x40006000
-#define GPIO_PORTD_BASE_ADDRESS           0x40007000
-#define GPIO_PORTE_BASE_ADDRESS           0x40024000
-#define GPIO_PORTF_BASE_ADDRESS           0x40025000
-
-/* GPIO Registers offset addresses */
-#define PORT_DATA_REG_OFFSET              0x3FC
-#define PORT_DIR_REG_OFFSET               0x400
-#define PORT_ALT_FUNC_REG_OFFSET          0x420
-#define PORT_PULL_UP_REG_OFFSET           0x510
-#define PORT_PULL_DOWN_REG_OFFSET         0x514
-#define PORT_DIGITAL_ENABLE_REG_OFFSET    0x51C
-#define PORT_LOCK_REG_OFFSET              0x520
-#define PORT_COMMIT_REG_OFFSET            0x524
-#define PORT_ANALOG_MODE_SEL_REG_OFFSET   0x528
-#define PORT_CTL_REG_OFFSET               0x52C
-
-/*******************************************************************************
  *                              Module Data Types                              *
  *******************************************************************************/
 
 /* Description: data type for symbolic name of a port pin */
-typedef Port_PinType            uint8
+typedef uint8            Port_PinType;
+
+/* Description: data type to identify the configured port */
+typedef uint8            Port_PortId;
 
 /* Description: holds the pin mode */
-typedef Port_PinModeType        uint8  
+typedef uint8            Port_PinModeType ; 
 
 /* Description: Enum to hold PIN direction */
 typedef enum
@@ -186,9 +165,9 @@ typedef enum
  */
 typedef struct 
 {
-    uint8 port_num; 
-    uint8 pin_num; 
-    Port_PinDirection direction;
+    Port_PortId port_num; 
+    Port_PinType pin_num; 
+    Port_PinDirectionType direction;
     Port_InternalResistor resistor;
     uint8 initial_value;
 }Port_ConfigType;
@@ -238,8 +217,8 @@ void Port_SetPinDirection (
 void Port_RefreshPortDirection ( void );
 
 /* Check if the user configured the version_info_api on or off */
-#if( PORT_VERSION_INFO_API == STD_ON )
-{
+#if ( PORT_VERSION_INFO_API == STD_ON )
+
 /************************************************************************************
 * Service Name: Port_GetVersionInfo
 * Sync/Async: Synchronous
@@ -251,6 +230,6 @@ void Port_RefreshPortDirection ( void );
 * Description: Returns the version information of this module
 ************************************************************************************/
 void Port_GetVersionInfo ( Std_VersionInfoType* versioninfo );
-}
+
 #endif /* version_info_API */
 #endif /* PORT_H */
