@@ -188,6 +188,8 @@ typedef struct
 ************************************************************************************/
 void Port_Init(const Port_ConfigType *ConfigPtr );
 
+/* Check if the user configured the SetPinDirection_api on or off */
+#if ( PORT_SET_PIN_DIRECTION_API == STD_ON )
 /************************************************************************************
 * Service Name: Port_SetPinDirection
 * Sync/Async: Synchronous
@@ -203,6 +205,7 @@ void Port_SetPinDirection (
    Port_PinType pin,
    Port_PinDirectionType direction
 );
+#endif
 
 /************************************************************************************
 * Service Name: Port_RefreshPortDirection
@@ -232,4 +235,24 @@ void Port_RefreshPortDirection ( void );
 void Port_GetVersionInfo ( Std_VersionInfoType* versioninfo );
 
 #endif /* version_info_API */
+
+/* Check if the user configured the SetPinMode_api on or off */
+#if ( PORT_SET_PIN_MODE_API == STD_ON )
+/************************************************************************************
+* Service Name: Port_SetPinMode
+* Sync/Async: Synchronous
+* Reentrancy: Reentrant
+* Parameters (in): pin -> port pin id number 
+*                  Mode -> New Port Pin Mode to be set on port pin 
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: Sets the port pin Mode
+************************************************************************************/
+void Port_SetPinMode (
+   Port_PinType pin,
+   Port_PinModeType Mode
+);
+#endif
+
 #endif /* PORT_H */

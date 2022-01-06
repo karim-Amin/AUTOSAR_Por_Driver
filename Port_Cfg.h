@@ -32,6 +32,10 @@
 /* Pre-compile option for Version Info API */
 #define PORT_VERSION_INFO_API                (STD_ON)
 
+/* Pre-compile option for Set Pin Direction API */
+#define PORT_SET_PIN_DIRECTION_API           (STD_ON)
 
+/* Pre-compile option for Set Pin Direction API */
+#define PORT_SET_PIN_MODE_API                (STD_ON)
 
 #endif /* PORT_CFG_H */
