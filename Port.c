@@ -27,14 +27,27 @@
 /******************************************************************************
  *                      Private Global variable                               *
 ******************************************************************************/
-   
-STATIC const Dio_ConfigChannel * Dio_PortChannels = NULL_PTR;
 
 STATIC uint8 Port_Status = PORT_NOT_INITIALIZED;
 
 /******************************************************************************
  *                      API Service Definitions                               *
 ******************************************************************************/
+
+/************************************************************************************
+* Service Name: Port_Init
+* Sync/Async: Synchronous
+* Reentrancy: Non-reentrant
+* Parameters (in): ConfigPtr - Pointer to post-build configuration struct
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: initilaze the port driver module
+************************************************************************************/
+void Port_Init(const Port_ConfigType *ConfigPtr )
+{
+  
+}
    
    
    
