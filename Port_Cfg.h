@@ -46,7 +46,7 @@
  **************************************************************/
 #define PORT_PIN_MODE_ADC        0x0A
 #define PORT_PIN_MODE_CAN        0x0B
-#define PORT_PIN_MODE_DIO        0x0C
+#define PORT_PIN_MODE_DIO        0x00
 #define PORT_PIN_MODE_DIO_GPT    0x0D
 #define PORT_PIN_MODE_DIO_WDG    0x0E
 #define PORT_PIN_MODE_FLEXRAY    0x0F
@@ -59,8 +59,259 @@
  *                Supported Modes For Each pin                *
  **************************************************************/
 
-/*      Pin A0 Modes    */
-#define PORT_PIN_A0_MODE  
+/**************************************************************
+ *                      Modes for Pin A0                      *
+ **************************************************************/
+#define PORT_PIN_A0_MODE_U0RX           (1U)
+#define PORT_PIN_A0_MODE_CAN1RX         (8U)
+/**************************************************************
+ *                      Modes for Pin A1                      *
+ **************************************************************/
+#define PORT_PIN_A1_MODE_U0TX           (1U)
+#define PORT_PIN_A1_MODE_CAN1TX         (8U)
+/**************************************************************
+ *                      Modes for Pin A2                      *
+ **************************************************************/
+#define PORT_PIN_A2_MODE_SSI0CLK        (2U)
+/**************************************************************
+ *                      Modes for Pin A3                      *
+ **************************************************************/
+#define PORT_PIN_A3_MODE_SSI0FSS        (2U)
+/**************************************************************
+ *                      Modes for Pin A4                      *
+ **************************************************************/
+#define PORT_PIN_A4_MODE_SSI0RX         (2U)
+/**************************************************************
+ *                      Modes for Pin A5                      *
+ **************************************************************/
+#define PORT_PIN_A5_MODE_SSI0TX         (2U)
+/**************************************************************
+ *                      Modes for Pin A6                      *
+ **************************************************************/
+#define PORT_PIN_A6_MODE_I2C1SCL        (3U)
+#define PORT_PIN_A6_MODE_M1PWM2         (5U)
+/**************************************************************
+ *                      Modes for Pin A7                      *
+ **************************************************************/
+#define PORT_PIN_A7_MODE_I2C1SDA        (3U)
+#define PORT_PIN_A7_MODE_M1PWM3         (5U)
+/**************************************************************
+ *                      Modes for Pin B0                      *
+ **************************************************************/
+#define PORT_PIN_B0_MODE_U1RX           (1U)
+#define PORT_PIN_B0_MODE_T2CCP0         (7U)
+/**************************************************************
+ *                      Modes for Pin B1                      *
+ **************************************************************/
+#define PORT_PIN_B1_MODE_U1TX           (1U)
+#define PORT_PIN_B1_MODE_T2CCP1         (7U)
+/**************************************************************
+ *                      Modes for Pin B2                      *
+ **************************************************************/
+#define PORT_PIN_B2_MODE_I2C0SCL        (3U)
+#define PORT_PIN_B2_MODE_T3CCP0         (7U)
+/**************************************************************
+ *                      Modes for Pin B3                      *
+ **************************************************************/
+#define PORT_PIN_B3_MODE_I2C0SDA        (3U)
+#define PORT_PIN_B3_MODE_T3CCP1         (7U)
+/**************************************************************
+ *                      Modes for Pin B4                      *
+ **************************************************************/
+#define PORT_PIN_B4_MODE_SSI2CLK        (2U)
+#define PORT_PIN_B4_MODE_M0PWM2         (4U)
+#define PORT_PIN_B4_MODE_T1CCP0         (7U)
+#define PORT_PIN_B4_MODE_CAN0RX         (8U)
+/**************************************************************
+ *                      Modes for Pin B5                      *
+ **************************************************************/
+#define PORT_PIN_B5_MODE_SSI2FSS        (2U)
+#define PORT_PIN_B5_MODE_M0PWM3         (4U)
+#define PORT_PIN_B5_MODE_T1CCP1         (7U)
+#define PORT_PIN_B5_MODE_CAN0TX         (8U)
+/**************************************************************
+ *                      Modes for Pin B6                      *
+ **************************************************************/
+#define PORT_PIN_B6_MODE_SSI2RX         (2U)
+#define PORT_PIN_B6_MODE_M0PWM0         (4U)
+#define PORT_PIN_B6_MODE_T0CCP0         (7U)
+/**************************************************************
+ *                      Modes for Pin B7                      *
+ **************************************************************/
+#define PORT_PIN_B7_MODE_SSI2TX         (2U)
+#define PORT_PIN_B7_MODE_M0PWM1         (4U)
+#define PORT_PIN_B7_MODE_T0CCP1         (7U)
+/*
+ * there will be gap because pins [ PC0 --> PC3 ] reserved for JTAG
+ */
+/**************************************************************
+ *                      Modes for Pin C4                      *
+ **************************************************************/
+#define PORT_PIN_C4_MODE_U4RX           (1U)
+#define PORT_PIN_C4_MODE_U1RX           (2U)
+#define PORT_PIN_C4_MODE_M0PWM6         (4U)
+#define PORT_PIN_C4_MODE_IDX1           (6U)
+#define PORT_PIN_C4_MODE_WT0CCP0        (7U)
+#define PORT_PIN_C4_MODE_U1RTS          (8U)
+/**************************************************************
+ *                      Modes for Pin C5                      *
+ **************************************************************/
+#define PORT_PIN_C5_MODE_U4TX           (1U)
+#define PORT_PIN_C5_MODE_U1TX           (2U)
+#define PORT_PIN_C5_MODE_M0PWM7         (4U)
+#define PORT_PIN_C5_MODE_PHA1           (6U)
+#define PORT_PIN_C5_MODE_WT0CCP1        (7U)
+#define PORT_PIN_C5_MODE_U1CTS          (8U)
+/**************************************************************
+ *                      Modes for Pin C6                      *
+ **************************************************************/
+#define PORT_PIN_C6_MODE_U3RX           (1U)
+#define PORT_PIN_C6_MODE_PHB1           (6U)
+#define PORT_PIN_C6_MODE_WT1CCP0        (7U)
+#define PORT_PIN_C6_MODE_USB0EPEN       (8U)
+/**************************************************************
+ *                      Modes for Pin C7                      *
+ **************************************************************/
+#define PORT_PIN_C7_MODE_U3TX           (1U)
+#define PORT_PIN_C7_MODE_WT1CCP1        (7U)
+#define PORT_PIN_C7_MODE_USB0PFLT       (8U)
+/**************************************************************
+ *                      Modes for Pin D0                      *
+ **************************************************************/
+#define PORT_PIN_D0_MODE_SSI3CLK        (1U)
+#define PORT_PIN_D0_MODE_SSI1CLK        (2U)
+#define PORT_PIN_D0_MODE_I2C3SCL        (3U)
+#define PORT_PIN_D0_MODE_M0PWM6         (4U)
+#define PORT_PIN_D0_MODE_M1PWM0         (5U)
+#define PORT_PIN_D0_MODE_WT2CCP0        (7U)
+/**************************************************************
+ *                      Modes for Pin D1                      *
+ **************************************************************/
+#define PORT_PIN_D1_MODE_SSI3FSS        (1U)
+#define PORT_PIN_D1_MODE_SSI1FSS        (2U)
+#define PORT_PIN_D1_MODE_I2C3SDA        (3U)
+#define PORT_PIN_D1_MODE_M0PWM7         (4U)
+#define PORT_PIN_D1_MODE_M1PWM1         (5U)
+#define PORT_PIN_D1_MODE_WT2CCP1        (7U)
+/**************************************************************
+ *                      Modes for Pin D2                      *
+ **************************************************************/
+#define PORT_PIN_D2_MODE_SSI3RX         (1U)
+#define PORT_PIN_D2_MODE_SSI1RX         (2U)
+#define PORT_PIN_D2_MODE_M0FAULT0       (4U)
+#define PORT_PIN_D2_MODE_WT3CCP0        (7U)
+#define PORT_PIN_D2_MODE_USB0EPEN       (8U)
+/**************************************************************
+ *                      Modes for Pin D3                      *
+ **************************************************************/
+#define PORT_PIN_D3_MODE_SSI3TX         (1U)
+#define PORT_PIN_D3_MODE_SSI1TX         (2U)
+#define PORT_PIN_D3_MODE_IDX0           (6U)
+#define PORT_PIN_D3_MODE_WT3CCP1        (7U)
+#define PORT_PIN_D3_MODE_USB0PFLT       (8U)
+/**************************************************************
+ *                      Modes for Pin D4                      *
+ **************************************************************/
+#define PORT_PIN_D4_MODE_U6RX           (1U)
+#define PORT_PIN_D4_MODE_WT4CCP0        (7U)
+/**************************************************************
+ *                      Modes for Pin D5                      *
+ **************************************************************/
+#define PORT_PIN_D5_MODE_U6TX           (1U)
+#define PORT_PIN_D5_MODE_WT4CCP1        (7U)
+/**************************************************************
+ *                      Modes for Pin D6                      *
+ **************************************************************/
+#define PORT_PIN_D6_MODE_U2RX           (1U)
+#define PORT_PIN_D6_MODE_M0FAULT0       (4U)
+#define PORT_PIN_D6_MODE_PHA0           (6U)
+#define PORT_PIN_D6_MODE_WT5CCP0        (7U)
+/**************************************************************
+ *                      Modes for Pin D7                      *
+ **************************************************************/
+#define PORT_PIN_D7_MODE_U2TX           (1U)
+#define PORT_PIN_D7_MODE_PHB0           (6U)
+#define PORT_PIN_D7_MODE_WT5CCP1        (7U)
+#define PORT_PIN_D7_MODE_NMI            (8U)
+/**************************************************************
+ *                      Modes for Pin E0                      *
+ **************************************************************/
+#define PORT_PIN_E0_MODE_U7RX           (1U)
+/**************************************************************
+ *                      Modes for Pin E1                      *
+ **************************************************************/
+#define PORT_PIN_E1_MODE_U7TX           (1U)
+/**************************************************************
+ *                      Modes for Pin E2                      *
+ **************************************************************/
+
+/**************************************************************
+ *                      Modes for Pin E3                      *
+ **************************************************************/
+
+/**************************************************************
+ *                      Modes for Pin E4                      *
+ **************************************************************/
+#define PORT_PIN_E4_MODE_U5RX           (1U)
+#define PORT_PIN_E4_MODE_I2C2SCL        (3U)
+#define PORT_PIN_E4_MODE_M0PWM4         (4U)
+#define PORT_PIN_E4_MODE_M1PWM2         (5U)
+#define PORT_PIN_E4_MODE_CAN0RX         (8U)
+
+/**************************************************************
+ *                      Modes for Pin E5                      *
+ **************************************************************/
+#define PORT_PIN_E5_MODE_U5TX           (1U)
+#define PORT_PIN_E5_MODE_I2C2SDA        (3U)
+#define PORT_PIN_E5_MODE_M0PWM5         (4U)
+#define PORT_PIN_E5_MODE_M1PWM3         (5U)
+#define PORT_PIN_E5_MODE_CAN0TX         (8U)
+
+/**************************************************************
+ *                      Modes for Pin F0                      *
+ **************************************************************/
+#define PORT_PIN_F0_MODE_U1RTS          (1U)
+#define PORT_PIN_F0_MODE_SSI1RX         (2U)
+#define PORT_PIN_F0_MODE_CAN0RX         (4U)
+#define PORT_PIN_F0_MODE_M1PWM4         (5U)
+#define PORT_PIN_F0_MODE_PHA0           (6U)
+#define PORT_PIN_F0_MODE_T0CCP0         (7U)
+#define PORT_PIN_F0_MODE_NMI            (8U)
+#define PORT_PIN_F0_MODE_C0O            (9U)
+
+/**************************************************************
+ *                      Modes for Pin F1                      *
+ **************************************************************/
+#define PORT_PIN_F1_MODE_U1CTS          (1U)
+#define PORT_PIN_F1_MODE_SSI1TX         (2U)
+#define PORT_PIN_F1_MODE_M1PWM5         (5U)
+#define PORT_PIN_F1_MODE_PHB0           (6U)
+#define PORT_PIN_F1_MODE_T0CCP1         (7U)
+#define PORT_PIN_F1_MODE_C1O            (9U)
+#define PORT_PIN_F1_MODE_TRD1           (10U)
+/**************************************************************
+ *                      Modes for Pin F2                      *
+ **************************************************************/
+#define PORT_PIN_F2_MODE_SSI1CLK        (2U)
+#define PORT_PIN_F2_MODE_M0FAULT0       (4U)
+#define PORT_PIN_F2_MODE_M1PWM6         (5U)
+#define PORT_PIN_F2_MODE_T1CCP0         (7U)
+#define PORT_PIN_F2_MODE_TRD0           (10U)
+/**************************************************************
+ *                      Modes for Pin F3                      *
+ **************************************************************/
+#define PORT_PIN_F3_MODE_SSI1FSS        (2U)
+#define PORT_PIN_F3_MODE_CAN0TX         (3U)
+#define PORT_PIN_F3_MODE_M1PWM7         (5U)
+#define PORT_PIN_F3_MODE_T1CCP1         (7U)
+#define PORT_PIN_F3_MODE_TRCLK          (10U)
+/**************************************************************
+ *                      Modes for Pin F4                      *
+ **************************************************************/
+#define PORT_PIN_F4_MODE_M1FAULT0       (5U)
+#define PORT_PIN_F4_MODE_IDX0           (6U)
+#define PORT_PIN_F4_MODE_T2CCP0         (7U)
+#define PORT_PIN_F4_MODE_USB0EPEN       (8U)
 /**************************************************************
  *            index for each pin in the config struct         *
  **************************************************************/
