@@ -60,7 +60,7 @@
  **************************************************************/
 
 /*      Pin A0 Modes    */
-
+#define PORT_PIN_A0_MODE  
 /**************************************************************
  *            index for each pin in the config struct         *
  **************************************************************/
@@ -111,448 +111,448 @@
  *                      Default configurations                *
  **************************************************************/
 /* default config if the pin not configured */
-#define Port_pin_dir_default             PORT_PIN_IN
-#define Port_pin_mode_default            0
-#define Port_pin_dir_change_default      PORT_DIRECTION_CHANGEABLE
-#define Port_pin_mode_change_default     PORT_MODE_CHANGEABLE
-#define Port_pin_resistor_default        OFF
-#define Port_pin_init_value_default      0   
+#define PORT_PIN_DIR_DEFAULT              PORT_PIN_IN
+#define PORT_PIN_MODE_DEFAULT             0
+#define PORT_PIN_DIR_CHANGE_DEFAULT       PORT_DIRECTION_CHANGEABLE
+#define PORT_PIN_MODE_CHANGE_DEFAULT      PORT_MODE_CHANGEABLE
+#define PORT_PIN_RESISTOR_DEFAULT         OFF
+#define PORT_PIN_INIT_VALUE_DEFAULT       0   
 /* Configuration values will be stored in the configuration structure */
    
 /**************************************************************
  *                      Congifg for Pin A0                     *
  **************************************************************/
-#define Port_Aid                (Port_PortId) 0
-#define Port_pin_A0             (Port_PinType) 0
-#define Port_pin_A0_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_A0_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_A0_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_A0_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_A0_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_A0_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_A_ID               (Port_PortId) 0
+#define PORT_PIN_A0             (Port_PinType) 0
+#define PORT_PIN_A0_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_A0_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A0_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_A0_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_A0_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_A0_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin A1                     *
  **************************************************************/
-#define Port_pin_A1             (Port_PinType) 1
-#define Port_pin_A1_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_A1_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_A1_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_A1_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_A1_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_A1_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_A1             (Port_PinType) 1
+#define PORT_PIN_A1_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_A1_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A1_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_A1_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_A1_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_A1_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin A2                     *
  **************************************************************/
-#define Port_pin_A2             (Port_PinType) 2
-#define Port_pin_A2_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_A2_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_A2_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_A2_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_A2_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_A2_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_A2             (Port_PinType) 2
+#define PORT_PIN_A2_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_A2_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A2_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_A2_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_A2_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_A2_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin A3                    *
  **************************************************************/
-#define Port_pin_A3             (Port_PinType) 3
-#define Port_pin_A3_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_A3_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_A3_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_A3_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_A3_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_A3_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_A3             (Port_PinType) 3
+#define PORT_PIN_A3_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_A3_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A3_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_A3_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_A3_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_A3_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin A4                     *
  **************************************************************/
-#define Port_pin_A4             (Port_PinType) 4
-#define Port_pin_A4_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_A4_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_A4_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_A4_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_A4_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_A4_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_A4             (Port_PinType) 4
+#define PORT_PIN_A4_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_A4_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A4_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_A4_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_A4_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_A4_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin A5                    *
  **************************************************************/
-#define Port_pin_A5             (Port_PinType) 5
-#define Port_pin_A5_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_A5_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_A5_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_A5_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_A5_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_A5_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_A5             (Port_PinType) 5
+#define PORT_PIN_A5_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_A5_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A5_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_A5_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_A5_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_A5_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin A6                    *
  **************************************************************/
-#define Port_pin_A6             (Port_PinType) 6
-#define Port_pin_A6_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_A6_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_A6_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_A6_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_A6_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_A6_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_A6             (Port_PinType) 6
+#define PORT_PIN_A6_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_A6_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A6_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_A6_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_A6_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_A6_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin A7                    *
  **************************************************************/
-#define Port_pin_A7             (Port_PinType) 7
-#define Port_pin_A7_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_A7_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_A7_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_A7_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_A7_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_A7_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_A7             (Port_PinType) 7
+#define PORT_PIN_A7_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_A7_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A7_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_A7_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_A7_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_A7_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin B0                     *
  **************************************************************/
-#define Port_Bid                (Port_PortId) 1
-#define Port_pin_B0             (Port_PinType) 0
-#define Port_pin_B0_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_B0_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_B0_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_B0_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_B0_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_B0_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_B_ID               (Port_PortId) 1
+#define PORT_PIN_B0             (Port_PinType) 0
+#define PORT_PIN_B0_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_B0_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_B0_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_B0_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_B0_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_B0_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin B1                     *
  **************************************************************/
-#define Port_pin_B1             (Port_PinType) 1
-#define Port_pin_B1_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_B1_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_B1_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_B1_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_B1_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_B1_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_B1             (Port_PinType) 1
+#define PORT_PIN_B1_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_B1_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_B1_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_B1_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_B1_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_B1_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin B2                     *
  **************************************************************/
-#define Port_pin_B2             (Port_PinType) 2
-#define Port_pin_B2_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_B2_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_B2_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_B2_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_B2_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_B2_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_B2             (Port_PinType) 2
+#define PORT_PIN_B2_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_B2_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_B2_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_B2_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_B2_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_B2_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin B3                     *
  **************************************************************/
-#define Port_pin_B3             (Port_PinType) 3
-#define Port_pin_B3_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_B3_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_B3_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_B3_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_B3_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_B3_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_B3             (Port_PinType) 3
+#define PORT_PIN_B3_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_B3_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_B3_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_B3_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_B3_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_B3_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin B4                     *
  **************************************************************/
-#define Port_pin_B4             (Port_PinType) 4
-#define Port_pin_B4_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_B4_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_B4_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_B4_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_B4_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_B4_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_B4             (Port_PinType) 4
+#define PORT_PIN_B4_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_B4_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_B4_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_B4_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_B4_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_B4_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin B5                     *
  **************************************************************/
-#define Port_pin_B5             (Port_PinType) 5
-#define Port_pin_B5_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_B5_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_B5_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_B5_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_B5_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_B5_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_B5             (Port_PinType) 5
+#define PORT_PIN_B5_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_B5_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_B5_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_B5_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_B5_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_B5_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin B6                     *
  **************************************************************/
-#define Port_pin_B6             (Port_PinType) 6
-#define Port_pin_B6_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_B6_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_B6_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_B6_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_B6_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_B6_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_B6             (Port_PinType) 6
+#define PORT_PIN_B6_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_B6_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_B6_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_B6_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_B6_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_B6_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin B7                     *
  **************************************************************/
-#define Port_pin_B7             (Port_PinType) 7
-#define Port_pin_B7_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_B7_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_B7_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_B7_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_B7_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_B7_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_B7             (Port_PinType) 7
+#define PORT_PIN_B7_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_B7_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_B7_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_B7_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_B7_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_B7_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin C0                     *
  **************************************************************/
-#define Port_Cid                (Port_PortId) 2
-#define Port_pin_C0             (Port_PinType) 0
-#define Port_pin_C0_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_C0_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_C0_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_C0_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_C0_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_C0_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_C_ID               (Port_PortId) 2
+#define PORT_PIN_C0             (Port_PinType) 0
+#define PORT_PIN_C0_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_C0_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_C0_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_C0_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_C0_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_C0_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT 
 /**************************************************************
  *                      Congifg for Pin C1                     *
  **************************************************************/
-#define Port_pin_C1             (Port_PinType) 1
-#define Port_pin_C1_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_C1_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_C1_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_C1_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_C1_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_C1_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_C1             (Port_PinType) 1
+#define PORT_PIN_C1_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_C1_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_C1_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_C1_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_C1_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_C1_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin C2                     *
  **************************************************************/
-#define Port_pin_C2             (Port_PinType) 2
-#define Port_pin_C2_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_C2_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_C2_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_C2_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_C2_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_C2_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_C2             (Port_PinType) 2
+#define PORT_PIN_C2_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_C2_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_C2_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_C2_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_C2_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_C2_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin C3                     *
  **************************************************************/
-#define Port_pin_C3             (Port_PinType) 3
-#define Port_pin_C3_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_C3_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_C3_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_C3_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_C3_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_C3_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_C3             (Port_PinType) 3
+#define PORT_PIN_C3_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_C3_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_C3_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_C3_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_C3_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_C3_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin C4                     *
  **************************************************************/
-#define Port_pin_C4             (Port_PinType) 4
-#define Port_pin_C4_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_C4_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_C4_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_C4_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_C4_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_C4_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_C4             (Port_PinType) 4
+#define PORT_PIN_C4_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_C4_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_C4_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_C4_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_C4_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_C4_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin C5                     *
  **************************************************************/
-#define Port_pin_C5             (Port_PinType) 5
-#define Port_pin_C5_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_C5_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_C5_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_C5_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_C5_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_C5_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_C5             (Port_PinType) 5
+#define PORT_PIN_C5_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_C5_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_C5_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_C5_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_C5_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_C5_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin C6                     *
  **************************************************************/
-#define Port_pin_C6             (Port_PinType) 6
-#define Port_pin_C6_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_C6_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_C6_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_C6_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_C6_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_C6_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_C6             (Port_PinType) 6
+#define PORT_PIN_C6_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_C6_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_C6_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_C6_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_C6_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_C6_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin C7                     *
  **************************************************************/
-#define Port_pin_C7             (Port_PinType) 7
-#define Port_pin_C7_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_C7_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_C7_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_C7_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_C7_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_C7_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_C7             (Port_PinType) 7
+#define PORT_PIN_C7_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_C7_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_C7_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_C7_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_C7_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_C7_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin D0                     *
  **************************************************************/
-#define Port_Did                (Port_PortId) 3
-#define Port_pin_D0             (Port_PinType) 0
-#define Port_pin_D0_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_D0_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_D0_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_D0_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_D0_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_D0_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_D_ID               (Port_PortId) 3
+#define PORT_PIN_D0             (Port_PinType) 0
+#define PORT_PIN_D0_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_D0_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_D0_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_D0_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_D0_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_D0_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin D1                     *
  **************************************************************/
-#define Port_pin_D1             (Port_PinType) 1
-#define Port_pin_D1_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_D1_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_D1_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_D1_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_D1_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_D1_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_D1             (Port_PinType) 1
+#define PORT_PIN_D1_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_D1_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_D1_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_D1_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_D1_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_D1_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin D2                     *
  **************************************************************/
-#define Port_pin_D2             (Port_PinType) 2
-#define Port_pin_D2_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_D2_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_D2_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_D2_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_D2_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_D2_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_D2             (Port_PinType) 2
+#define PORT_PIN_D2_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_D2_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_D2_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_D2_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_D2_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_D2_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin D3                     *
  **************************************************************/
-#define Port_pin_D3             (Port_PinType) 3
-#define Port_pin_D3_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_D3_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_D3_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_D3_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_D3_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_D3_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_D3             (Port_PinType) 3
+#define PORT_PIN_D3_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_D3_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_D3_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_D3_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_D3_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_D3_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin D4                     *
  **************************************************************/
-#define Port_pin_D4             (Port_PinType) 4
-#define Port_pin_D4_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_D4_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_D4_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_D4_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_D4_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_D4_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_D4             (Port_PinType) 4
+#define PORT_PIN_D4_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_D4_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_D4_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_D4_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_D4_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_D4_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin D5                     *
  **************************************************************/
-#define Port_pin_D5             (Port_PinType) 5
-#define Port_pin_D5_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_D5_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_D5_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_D5_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_D5_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_D5_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_D5             (Port_PinType) 5
+#define PORT_PIN_D5_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_D5_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_D5_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_D5_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_D5_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_D5_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin D6                     *
  **************************************************************/
-#define Port_pin_D6             (Port_PinType) 6
-#define Port_pin_D6_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_D6_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_D6_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_D6_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_D6_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_D6_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_D6             (Port_PinType) 6
+#define PORT_PIN_D6_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_D6_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_D6_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_D6_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_D6_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_D6_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin D7                     *
  **************************************************************/
-#define Port_pin_D7             (Port_PinType) 7
-#define Port_pin_D7_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_D7_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_D7_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_D7_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_D7_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_D7_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_D7             (Port_PinType) 7
+#define PORT_PIN_D7_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_D7_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_D7_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_D7_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_D7_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_D7_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin E0                     *
  **************************************************************/
-#define Port_Eid                (Port_PortId) 4
-#define Port_pin_E0             (Port_PinType) 0
-#define Port_pin_E0_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_E0_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_E0_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_E0_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_E0_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_E0_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_E_ID               (Port_PortId) 4
+#define PORT_PIN_E0             (Port_PinType) 0
+#define PORT_PIN_E0_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_E0_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_E0_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_E0_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_E0_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_E0_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin E1                     *
  **************************************************************/
-#define Port_pin_E1             (Port_PinType) 1
-#define Port_pin_E1_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_E1_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_E1_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_E1_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_E1_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_E1_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_E1             (Port_PinType) 1
+#define PORT_PIN_E1_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_E1_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_E1_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_E1_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_E1_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_E1_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin E2                     *
  **************************************************************/
-#define Port_pin_E2             (Port_PinType) 2
-#define Port_pin_E2_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_E2_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_E2_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_E2_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_E2_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_E2_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_E2             (Port_PinType) 2
+#define PORT_PIN_E2_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_E2_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_E2_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_E2_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_E2_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_E2_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin E3                     *
  **************************************************************/
-#define Port_pin_E3             (Port_PinType) 3
-#define Port_pin_E3_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_E3_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_E3_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_E3_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_E3_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_E3_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_E3             (Port_PinType) 3
+#define PORT_PIN_E3_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_E3_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_E3_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_E3_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_E3_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_E3_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin E4                     *
  **************************************************************/
-#define Port_pin_E4             (Port_PinType) 4
-#define Port_pin_E4_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_E4_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_E4_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_E4_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_E4_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_E4_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_E4             (Port_PinType) 4
+#define PORT_PIN_E4_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_E4_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_E4_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_E4_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_E4_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_E4_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin E5                     *
  **************************************************************/
-#define Port_pin_E5             (Port_PinType) 5
-#define Port_pin_E5_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_E5_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_E5_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_E5_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_E5_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_E5_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_E5             (Port_PinType) 5
+#define PORT_PIN_E5_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_E5_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_E5_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_E5_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_E5_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_E5_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin F0                     *
  **************************************************************/
-#define Port_Fid                (Port_PortId) 5
-#define Port_pin_F0             (Port_PinType) 0
-#define Port_pin_F0_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_F0_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_F0_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_F0_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_F0_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_F0_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_F_ID               (Port_PortId) 5
+#define PORT_PIN_F0             (Port_PinType) 0
+#define PORT_PIN_F0_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_F0_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_F0_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_F0_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_F0_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_F0_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin F1                     *
  **************************************************************/
-#define Port_pin_F1             (Port_PinType) 1
-#define Port_pin_F1_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_F1_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_F1_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_F1_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_F1_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_F1_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_F1             (Port_PinType) 1
+#define PORT_PIN_F1_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_F1_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_F1_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_F1_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_F1_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_F1_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin F2                     *
  **************************************************************/
-#define Port_pin_F2             (Port_PinType) 2
-#define Port_pin_F2_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_F2_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_F2_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_F2_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_F2_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_F2_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_F2             (Port_PinType) 2
+#define PORT_PIN_F2_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_F2_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_F2_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_F2_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_F2_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_F2_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin F3                     *
  **************************************************************/
-#define Port_pin_F3             (Port_PinType) 3
-#define Port_pin_F3_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_F3_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_F3_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_F3_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_F3_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_F3_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_F3             (Port_PinType) 3
+#define PORT_PIN_F3_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_F3_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_F3_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_F3_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_F3_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_F3_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 /**************************************************************
  *                      Congifg for Pin F4                     *
  **************************************************************/
-#define Port_pin_F4             (Port_PinType) 4
-#define Port_pin_F4_dir         (Port_PinDirectionType) Port_pin_dir_default
-#define Port_pin_F4_mode        (Port_PinModeType) Port_pin_mode_default
-#define Port_pin_F4_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
-#define Port_pin_F4_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
-#define Port_pin_F4_resistor    (Port_InternalResistor) Port_pin_resistor_default
-#define Port_pin_F4_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+#define PORT_PIN_F4             (Port_PinType) 4
+#define PORT_PIN_F4_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
+#define PORT_PIN_F4_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_F4_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
+#define PORT_PIN_F4_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
+#define PORT_PIN_F4_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
+#define PORT_PIN_F4_INIT_VALUE  (Port_PinLevelInit) PORT_PIN_INIT_VALUE_DEFAULT
 #endif /* PORT_CFG_H */

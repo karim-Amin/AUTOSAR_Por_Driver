@@ -59,15 +59,23 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
      }
    volatile uint32 * PortGpio_Ptr = NULL_PTR; /* point to the required Port Registers base address */
    
-   volatile uint32 delay = 0; /* to make delay 3 clock cycles after enable the clock in the ports
+   volatile uint32 delay = 0; /* to make delay 3 clock cycles after enable the clock in the ports */
    
    uint8 count; /* counter used to loop across all channels in each port */
    
    uint8 port_num; /* to hold the port number in each iteration */
+   uint8 pin_num;  /* to hold the pin number in each iteration */
+   /* enable the clock in All port */
+   SYSCTL_REGCGC2_REG |= (1<<PORT_A_ID) | (1<<PORT_B_ID) | (1<<PORT_C_ID) | (1<<PORT_D_ID) | (1<<PORT_E_ID)| (1<<PORT_F_ID);
    
-   for ( count = 0; count < PORT_NUM_OF_CHANNELS;count++ )
+   /* At least delay three clock cycles */
+   delay = SYSCTL_REGCGC2_REG;
+   
+   for ( count = 0; count < PORT_NUM_OF_CHANNELS ;count++ )
    {
+     /* Store the pin and port numbers */
     port_num = ConfigPtr->channels_config[count].port_num;
+    pin_num = ConfigPtr->channels_config[count].pin_num;
     switch (port_num)
     {
     case 0:     PortGpio_Ptr = (volatile uint32 *)GPIO_PORTA_BASE_ADDRESS;
@@ -83,6 +91,38 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
     case 5:     PortGpio_Ptr = (volatile uint32 *)GPIO_PORTF_BASE_ADDRESS;
       break;
     }
+    /* Check the need to unlock the lock_register 
+     * this is only for PD7 & PF0 --> NMI Channels
+     * and for [ PC3 -> PC0 ]  --> JTAG/SWD and it is forbidden
+     */ 
+    if( ((port_num == PORT_D_ID) && (pin_num == PORT_PIN_D7)) || ((port_num == PORT_F_ID) && (pin_num == PORT_PIN_F0)) )
+    {
+      /* unlock the lock register */
+      *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_LOCK_REG_OFFSET) = PORT_UNLOCK_MAGIC_NUMBER;
+      /* set the corresponding bit in the commit register*/
+      SET_BIT(*(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_COMMIT_REG_OFFSET) , pin_num );
+    }
+    /* The Forbiden satiuation [ PC3 -> PC0 ]  --> JTAG/SWD */
+    else if( (port_num == PORT_C_ID)\
+         &&  ((pin_num == PORT_PIN_C3) || (pin_num == PORT_PIN_C2) || (pin_num == PORT_PIN_C1)|| (pin_num == PORT_PIN_C0)))
+    {
+      /* DO NOT CONTIUNE */ 
+      continue;
+    }
+    else{
+      /* the other pins do not need any commit register */
+    }
+    /* set up the direction for the current pin based on */ 
+    if( ConfigPtr->channels_config[count].direction == PORT_PIN_OUT )
+    {
+      SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_DIR_REG_OFFSET), pin_num );
+    }
+    /* if it is PORT_PIN_IN input pin */
+    else{
+      /* add to the base register the offest for direction_register */
+      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_DIR_REG_OFFSET), pin_num );
+    }
+    /*  */
    }
 }
    
