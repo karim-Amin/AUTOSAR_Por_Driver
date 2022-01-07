@@ -40,7 +40,72 @@
 
 /* define total number of pins in the micro */
 #define PORT_NUM_OF_CHANNELS                 (43U)
+   
+/**************************************************************
+ *                      All Modes in Tiva-c                   *
+ **************************************************************/
+#define PORT_PIN_MODE_ADC        0x0A
+#define PORT_PIN_MODE_CAN        0x0B
+#define PORT_PIN_MODE_DIO        0x0C
+#define PORT_PIN_MODE_DIO_GPT    0x0D
+#define PORT_PIN_MODE_DIO_WDG    0x0E
+#define PORT_PIN_MODE_FLEXRAY    0x0F
+#define PORT_PIN_MODE_ICU        0x1A
+#define PORT_PIN_MODE_LIN        0x1B
+#define PORT_PIN_MODE_MEM        0x1C
+#define PORT_PIN_MODE_PWM        0x1D
+#define PORT_PIN_MODE_SPI        0x1E
+/**************************************************************
+ *                Supported Modes For Each pin                *
+ **************************************************************/
 
+/*      Pin A0 Modes    */
+/**************************************************************
+ *            index for each pin in the config struct         *
+ **************************************************************/
+#define PORT_PINA0_INDEX        (0U)
+#define PORT_PINA1_INDEX        (1U)
+#define PORT_PINA2_INDEX        (2U)
+#define PORT_PINA3_INDEX        (3U)
+#define PORT_PINA4_INDEX        (4U)
+#define PORT_PINA5_INDEX        (5U)
+#define PORT_PINA6_INDEX        (6U)
+#define PORT_PINA7_INDEX        (7U)
+#define PORT_PINB0_INDEX        (8U)
+#define PORT_PINB1_INDEX        (9U)
+#define PORT_PINB2_INDEX        (10U)
+#define PORT_PINB3_INDEX        (11U)
+#define PORT_PINB4_INDEX        (12U)
+#define PORT_PINB5_INDEX        (13U)
+#define PORT_PINB6_INDEX        (14U)
+#define PORT_PINB7_INDEX        (15U)
+#define PORT_PINC0_INDEX        (16U)
+#define PORT_PINC1_INDEX        (17U)
+#define PORT_PINC2_INDEX        (18U)
+#define PORT_PINC3_INDEX        (19U)
+#define PORT_PINC4_INDEX        (20U)
+#define PORT_PINC5_INDEX        (21U)
+#define PORT_PINC6_INDEX        (22U)
+#define PORT_PINC7_INDEX        (23U)
+#define PORT_PIND0_INDEX        (24U)
+#define PORT_PIND1_INDEX        (25U)
+#define PORT_PIND2_INDEX        (26U)
+#define PORT_PIND3_INDEX        (27U)
+#define PORT_PIND4_INDEX        (28U)
+#define PORT_PIND5_INDEX        (29U) 
+#define PORT_PIND6_INDEX        (30U)
+#define PORT_PIND7_INDEX        (31U)
+#define PORT_PINE0_INDEX        (32U)
+#define PORT_PINE1_INDEX        (33U)
+#define PORT_PINE2_INDEX        (34U)
+#define PORT_PINE3_INDEX        (35U)
+#define PORT_PINE4_INDEX        (36U)
+#define PORT_PINE5_INDEX        (37U)
+#define PORT_PINF0_INDEX        (38U)
+#define PORT_PINF1_INDEX        (39U)
+#define PORT_PINF2_INDEX        (40U)
+#define PORT_PINF3_INDEX        (41U)
+#define PORT_PINF4_INDEX        (42U)
 /**************************************************************
  *                      Default configurations                *
  **************************************************************/
@@ -216,9 +281,49 @@
 #define Port_pin_B7_resistor    (Port_InternalResistor) Port_pin_resistor_default
 #define Port_pin_B7_init_value  (Port_PinLevelInit) Port_pin_init_value_default
 /**************************************************************
- *                      Congifg for Pin C4                     *
+ *                      Congifg for Pin C0                     *
  **************************************************************/
 #define Port_Cid                (Port_PortId) 2
+#define Port_pin_C0             (Port_PinType) 0
+#define Port_pin_C0_dir         (Port_PinDirectionType) Port_pin_dir_default
+#define Port_pin_C0_mode        (Port_PinModeType) Port_pin_mode_default
+#define Port_pin_C0_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
+#define Port_pin_C0_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
+#define Port_pin_C0_resistor    (Port_InternalResistor) Port_pin_resistor_default
+#define Port_pin_C0_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+/**************************************************************
+ *                      Congifg for Pin C1                     *
+ **************************************************************/
+#define Port_pin_C1             (Port_PinType) 1
+#define Port_pin_C1_dir         (Port_PinDirectionType) Port_pin_dir_default
+#define Port_pin_C1_mode        (Port_PinModeType) Port_pin_mode_default
+#define Port_pin_C1_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
+#define Port_pin_C1_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
+#define Port_pin_C1_resistor    (Port_InternalResistor) Port_pin_resistor_default
+#define Port_pin_C1_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+/**************************************************************
+ *                      Congifg for Pin C2                     *
+ **************************************************************/
+#define Port_pin_C2             (Port_PinType) 2
+#define Port_pin_C2_dir         (Port_PinDirectionType) Port_pin_dir_default
+#define Port_pin_C2_mode        (Port_PinModeType) Port_pin_mode_default
+#define Port_pin_C2_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
+#define Port_pin_C2_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
+#define Port_pin_C2_resistor    (Port_InternalResistor) Port_pin_resistor_default
+#define Port_pin_C2_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+/**************************************************************
+ *                      Congifg for Pin C3                     *
+ **************************************************************/
+#define Port_pin_C3             (Port_PinType) 3
+#define Port_pin_C3_dir         (Port_PinDirectionType) Port_pin_dir_default
+#define Port_pin_C3_mode        (Port_PinModeType) Port_pin_mode_default
+#define Port_pin_C3_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
+#define Port_pin_C3_mode_change (Port_ModeChangeType)  Port_pin_mode_change_default
+#define Port_pin_C3_resistor    (Port_InternalResistor) Port_pin_resistor_default
+#define Port_pin_C3_init_value  (Port_PinLevelInit) Port_pin_init_value_default
+/**************************************************************
+ *                      Congifg for Pin C4                     *
+ **************************************************************/
 #define Port_pin_C4             (Port_PinType) 4
 #define Port_pin_C4_dir         (Port_PinDirectionType) Port_pin_dir_default
 #define Port_pin_C4_mode        (Port_PinModeType) Port_pin_mode_default
