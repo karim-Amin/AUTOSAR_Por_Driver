@@ -38,4 +38,9 @@
 /* Pre-compile option for Set Pin Direction API */
 #define PORT_SET_PIN_MODE_API                (STD_ON)
 
+/* define total number of pins in the micro */
+#define PORT_NUM_OF_CHANNELS                 (43U)
+   
+/* Configuration values will be stored in the configuration structure */
+   
 #endif /* PORT_CFG_H */
