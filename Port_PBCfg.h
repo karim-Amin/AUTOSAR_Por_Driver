@@ -30,7 +30,5 @@
  *                       External Variables                                    *
  *******************************************************************************/
 
-/* Extern PB structures to be used by Port and other modules */
-extern const Port_ConfigType Port_Configuration;
 
 #endif  /* PORT_PB_CFG */

@@ -84,27 +84,10 @@
  ||  (PORT_CFG_SW_PATCH_VERSION != PORT_SW_PATCH_VERSION))
   #error "The SW version of Port_Cfg.h does not match the expected version"
 #endif
-   
-/* Port Post bulid configurations */
-#include "Port_PBCfg.h"
-   
-/* AUTOSAR Version checking between Port_PBCfg.h and Port.h files */
-#if ((PORT_PBCFG_AR_RELEASE_MAJOR_VERSION != PORT_AR_RELEASE_MAJOR_VERSION)\
- ||  (PORT_PBCFG_AR_RELEASE_MINOR_VERSION != PORT_AR_RELEASE_MINOR_VERSION)\
- ||  (PORT_PBCFG_AR_RELEASE_PATCH_VERSION != PORT_AR_RELEASE_PATCH_VERSION))
-  #error "The AR version of Port_Cfg.h does not match the expected version"
-#endif
 
-/* Software Version checking between Port_Cfg.h and Port.h files */
-#if ((PORT_PBCFG_SW_MAJOR_VERSION != PORT_SW_MAJOR_VERSION)\
- ||  (PORT_PBCFG_SW_MINOR_VERSION != PORT_SW_MINOR_VERSION)\
- ||  (PORT_PBCFG_SW_PATCH_VERSION != PORT_SW_PATCH_VERSION))
-  #error "The SW version of Port_Cfg.h does not match the expected version"
-#endif
  /* include non-AUTOSAR file */
 #include "Common_Macros.h"
-
- 
+   
 /******************************************************************************
  *                      API Service Id Macros                                 *
 ******************************************************************************/
@@ -302,4 +285,6 @@ void Port_SetPinMode (
 );
 #endif
 
+/* Extern PB structures to be used by Port and other modules */
+extern const Port_ConfigType Port_Configuration;
 #endif /* PORT_H */

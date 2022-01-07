@@ -60,6 +60,7 @@
  **************************************************************/
 
 /*      Pin A0 Modes    */
+
 /**************************************************************
  *            index for each pin in the config struct         *
  **************************************************************/
@@ -110,7 +111,7 @@
  *                      Default configurations                *
  **************************************************************/
 /* default config if the pin not configured */
-#define Port_pin_dir_default             PORT_PIN_INPUT
+#define Port_pin_dir_default             PORT_PIN_IN
 #define Port_pin_mode_default            0
 #define Port_pin_dir_change_default      PORT_DIRECTION_CHANGEABLE
 #define Port_pin_mode_change_default     PORT_MODE_CHANGEABLE
@@ -496,7 +497,7 @@
 /**************************************************************
  *                      Congifg for Pin E5                     *
  **************************************************************/
-#define Port_pin_E             (Port_PinType) 5
+#define Port_pin_E5             (Port_PinType) 5
 #define Port_pin_E5_dir         (Port_PinDirectionType) Port_pin_dir_default
 #define Port_pin_E5_mode        (Port_PinModeType) Port_pin_mode_default
 #define Port_pin_E5_dir_change  (Port_DirectionChangeType) Port_pin_dir_change_default
