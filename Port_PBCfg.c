@@ -41,5 +41,5 @@
 
 /* PB structure used with Port_Init API */
 const Port_ConfigType Port_Configuration = {
-                                             
-				         };
+                                         
+};
