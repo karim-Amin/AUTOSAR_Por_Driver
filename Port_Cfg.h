@@ -298,7 +298,7 @@
 #define PORT_PIN_F1_MODE_PHB0           (6U)
 #define PORT_PIN_F1_MODE_T0CCP1         (7U)
 #define PORT_PIN_F1_MODE_C1O            (9U)
-#define PORT_PIN_F1_MODE_TRD1           (10U)
+#define PORT_PIN_F1_MODE_TRD1           (14U)
 /**************************************************************
  *                      Modes for Pin F2                      *
  **************************************************************/
@@ -306,7 +306,7 @@
 #define PORT_PIN_F2_MODE_M0FAULT0       (4U)
 #define PORT_PIN_F2_MODE_M1PWM6         (5U)
 #define PORT_PIN_F2_MODE_T1CCP0         (7U)
-#define PORT_PIN_F2_MODE_TRD0           (10U)
+#define PORT_PIN_F2_MODE_TRD0           (14U)
 /**************************************************************
  *                      Modes for Pin F3                      *
  **************************************************************/
@@ -314,7 +314,7 @@
 #define PORT_PIN_F3_MODE_CAN0TX         (3U)
 #define PORT_PIN_F3_MODE_M1PWM7         (5U)
 #define PORT_PIN_F3_MODE_T1CCP1         (7U)
-#define PORT_PIN_F3_MODE_TRCLK          (10U)
+#define PORT_PIN_F3_MODE_TRCLK          (14U)
 /**************************************************************
  *                      Modes for Pin F4                      *
  **************************************************************/
