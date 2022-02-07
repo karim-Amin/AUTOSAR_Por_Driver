@@ -293,4 +293,5 @@ void Port_SetPinMode (
 
 /* Extern PB structures to be used by Port and other modules */
 extern const Port_ConfigType Port_Configuration;
+extern const uint8 Port_configured_pins[PORT_NUM_OF_CONFIG_PINS];
 #endif /* PORT_H */

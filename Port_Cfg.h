@@ -41,6 +41,8 @@
 /* define total number of pins in the micro */
 #define PORT_NUM_OF_CHANNELS                 (43U)
    
+/* define total number of configured pins */
+#define PORT_NUM_OF_CONFIG_PINS              (5U)
 /**************************************************************
  *                      All Modes in Tiva-c                   *
  **************************************************************/

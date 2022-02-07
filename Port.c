@@ -257,10 +257,115 @@ void Port_SetPinDirection (
 * Parameters (inout): None
 * Parameters (out): None
 * Return value: None
-* Description: Refrshes port direction 
+* Description: Refrshes all configured ports with the configured directions 
 ************************************************************************************/
 void Port_RefreshPortDirection ( void ){
   
+  /* check for the development error */
+  #if ( PORT_DEV_ERROR_DETECT == STD_ON )
+  /* check if the Port driver initialized or not */
+  if( Port_Status == PORT_NOT_INITIALIZED )
+  {
+    Det_ReportError(PORT_MODULE_ID,PORT_INSTANCE_ID,PORT_SET_PIN_DIRECTION_SID,PORT_E_UNINIT);
+  }else{
+    /* do nothing */
+  }
+#endif
+  uint8 i ;
+  uint8 PortPin_number;
+  uint8 Port_num;
+  Port_PinDirectionType direction;
+   /* to hold the base address */
+  volatile uint32 * PortGpioPtr_base = NULL_PTR;
+  for( i=0 ; i < PORT_NUM_OF_CONFIG_PINS ;i++)
+  {
+    /* get every configured pin from the array of configured pins */
+    PortPin_number = Port_configured_pins[i];
+    /* refresh if the pin direction is unchangable and if the pin configured */
+    if( Port_Configuration.channels_config[PortPin_number].D_change == PORT_DIRECTION_UNCHANGEABLE )
+    {
+      Port_num = Port_Configuration.channels_config[PortPin_number].port_num;
+      direction = Port_Configuration.channels_config[PortPin_number].direction ;
+      switch( Port_num )
+      {  
+        case 0 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTA_BASE_ADDRESS;
+          break;
+        case 1 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTB_BASE_ADDRESS;
+          break;
+        case 2 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTC_BASE_ADDRESS;
+          break;
+        case 3 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTD_BASE_ADDRESS;
+          break;
+        case 4 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTE_BASE_ADDRESS;
+          break;
+        case 5 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTF_BASE_ADDRESS;
+          break;
+        default:
+          break;
+      }
+      if( direction == PORT_PIN_OUT )
+      {
+        SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), PortPin_number );
+      }
+      else{
+        CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), PortPin_number );
+      }
+    }
+  }
 }
-   
-   
+
+/* Check if the user configured the version_info_api on or off */
+#if ( PORT_VERSION_INFO_API == STD_ON )
+
+/************************************************************************************
+* Service Name: Port_GetVersionInfo
+* Sync/Async: Synchronous
+* Reentrancy: Non-Reentrant
+* Parameters (in): None 
+* Parameters (inout): None
+* Parameters (out): versioninfo -> pointer to where to store the version info of this module
+* Return value: None
+* Description: Returns the version information of this module
+************************************************************************************/
+void Port_GetVersionInfo ( Std_VersionInfoType* versioninfo )
+{
+/* check for the development error */
+  #if ( PORT_DEV_ERROR_DETECT == STD_ON )
+  /* check if the Port driver initialized or not */
+  if( versioninfo == NULL_PTR )
+  {
+    Det_ReportError(PORT_MODULE_ID,PORT_INSTANCE_ID,PORT_GET_VERSION_INFO_SID,PORT_E_PARAM_POINTER);
+  }else{
+    /* do nothing */
+  }
+#endif
+  versioninfo->moduleID = PORT_MODULE_ID;
+  versioninfo->sw_major_version = PORT_SW_MAJOR_VERSION;
+  versioninfo->sw_minor_version = PORT_SW_MINOR_VERSION;
+  versioninfo->sw_patch_version = PORT_SW_PATCH_VERSION;
+  versioninfo->vendorID = PORT_VENDOR_ID;
+}
+
+#endif /* version_info_API */
+ 
+/* Check if the user configured the SetPinMode_api on or off */
+#if ( PORT_SET_PIN_MODE_API == STD_ON )
+/************************************************************************************
+* Service Name: Port_SetPinMode
+* Sync/Async: Synchronous
+* Reentrancy: Reentrant
+* Parameters (in): pin -> port pin id number 
+*                  Mode -> New Port Pin Mode to be set on port pin 
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: Sets the port pin Mode
+************************************************************************************/
+void Port_SetPinMode (
+   Port_PinType pin,
+   Port_PinModeType Mode
+)
+{
+  
+}
+#endif  
