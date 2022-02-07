@@ -42,7 +42,7 @@
 #define PORT_NUM_OF_CHANNELS                 (43U)
    
 /* define total number of configured pins */
-#define PORT_NUM_OF_CONFIG_PINS              (5U)
+#define PORT_NUM_OF_CONFIG_PINS              (6U)
 /**************************************************************
  *                      All Modes in Tiva-c                   *
  **************************************************************/
@@ -506,8 +506,8 @@
  *                      Congifg for Pin B4                     *
  **************************************************************/
 #define PORT_PIN_B4             (Port_PinType) 4
-#define PORT_PIN_B4_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
-#define PORT_PIN_B4_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_B4_DIR         (Port_PinDirectionType) PORT_PIN_IN
+#define PORT_PIN_B4_MODE        (Port_PinModeType) PORT_PIN_B4_MODE_ADC10 
 #define PORT_PIN_B4_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
 #define PORT_PIN_B4_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
 #define PORT_PIN_B4_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
@@ -790,22 +790,22 @@
  *                      Congifg for Pin F2                     *
  **************************************************************/
 #define PORT_PIN_F2             (Port_PinType) 2
-#define PORT_PIN_F2_DIR         (Port_PinDirectionType) PORT_PIN_OUT
+#define PORT_PIN_F2_DIR         (Port_PinDirectionType) PORT_PIN_IN
 #define PORT_PIN_F2_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
 #define PORT_PIN_F2_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
 #define PORT_PIN_F2_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
 #define PORT_PIN_F2_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
-#define PORT_PIN_F2_INIT_VALUE  (Port_PinLevelInit) STD_HIGH
+#define PORT_PIN_F2_INIT_VALUE  (Port_PinLevelInit) STD_LOW
 /**************************************************************
  *                      Congifg for Pin F3                     *
  **************************************************************/
 #define PORT_PIN_F3             (Port_PinType) 3
-#define PORT_PIN_F3_DIR         (Port_PinDirectionType) PORT_PIN_OUT
+#define PORT_PIN_F3_DIR         (Port_PinDirectionType) PORT_PIN_IN
 #define PORT_PIN_F3_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
 #define PORT_PIN_F3_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
 #define PORT_PIN_F3_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
 #define PORT_PIN_F3_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
-#define PORT_PIN_F3_INIT_VALUE  (Port_PinLevelInit) STD_HIGH
+#define PORT_PIN_F3_INIT_VALUE  (Port_PinLevelInit) STD_LOW
 /**************************************************************
  *                      Congifg for Pin F4                     *
  **************************************************************/

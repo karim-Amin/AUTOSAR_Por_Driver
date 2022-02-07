@@ -221,6 +221,8 @@ void Port_SetPinDirection (
 #endif
   /* to hold the port number */
   uint8 port_number = Port_config_channel[pin].port_num;
+  /* TO HOLD THE PIN NUMBER */
+  uint8 pin_num = Port_config_channel[pin].pin_num;
   /* to hold the base address */
   volatile uint32 * PortGpioPtr_base = NULL_PTR;
   switch( port_number )
@@ -243,10 +245,10 @@ void Port_SetPinDirection (
   /* set up the direction for the current pin based on */ 
     if( direction == PORT_PIN_OUT )
     {
-      SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), pin );
+      SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), pin_num );
     }
     else{
-      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), pin );
+      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), pin_num );
     }
 }
 #endif
@@ -274,8 +276,10 @@ void Port_RefreshPortDirection ( void ){
   }
 #endif
   uint8 i ;
+  /* to hold the index of the pin in config structure */
   uint8 PortPin_number;
   uint8 Port_num;
+  uint8 pin_num;
   Port_PinDirectionType direction;
    /* to hold the base address */
   volatile uint32 * PortGpioPtr_base = NULL_PTR;
@@ -287,6 +291,7 @@ void Port_RefreshPortDirection ( void ){
     if( Port_config_channel[PortPin_number].D_change == PORT_DIRECTION_UNCHANGEABLE )
     {
       Port_num = Port_config_channel[PortPin_number].port_num;
+      pin_num = Port_config_channel[PortPin_number].pin_num;
       direction = Port_config_channel[PortPin_number].direction ;
       switch( Port_num )
       {  
@@ -307,10 +312,10 @@ void Port_RefreshPortDirection ( void ){
       }
       if( direction == PORT_PIN_OUT )
       {
-        SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), PortPin_number );
+        SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), pin_num );
       }
       else{
-        CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), PortPin_number );
+        CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), pin_num );
       }
     }
   }
@@ -372,7 +377,7 @@ void Port_SetPinMode (
   /* check invalid port pin number */
   if( pin >= PORT_NUM_OF_CHANNELS )
   {
-    Det_ReportError(PORT_MODULE_ID,PORT_INSTANCE_ID,PORT_SET_PIN_MODE_SID,PORT_E_PARAM_PIN);
+    Det_ReportError( PORT_MODULE_ID,PORT_INSTANCE_ID,PORT_SET_PIN_MODE_SID,PORT_E_PARAM_PIN );
   }else{
     /* do nothing */
   }
@@ -399,6 +404,8 @@ void Port_SetPinMode (
 #endif
   /* to hold the port number */
   uint8 port_number = Port_config_channel[pin].port_num;
+  /* to hold the pin number */
+  uint8 pin_num = Port_config_channel[pin].pin_num;
   /* to hold the base address */
   volatile uint32 * PortGpioPtr_base = NULL_PTR;
   switch( port_number )
@@ -419,6 +426,6 @@ void Port_SetPinMode (
     break;
   }
   /* put the pin mode as defined in the configuration structure  */
-  *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) |= (Mode) << (pin * PORT_CTL_REG_PIN_VALUE_WIDTH));
+  *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) |= (Mode) << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH);
 }
 #endif  
