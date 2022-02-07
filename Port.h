@@ -92,7 +92,7 @@
  *                              CONSTANTS                                     *
 ******************************************************************************/
 #define PORT_UNLOCK_MAGIC_NUMBER        0x4C4F434B
-   
+#define PORT_CTL_REG_PIN_VALUE_WIDTH    4U
    
 /******************************************************************************
  *                      API Service Id Macros                                 *
