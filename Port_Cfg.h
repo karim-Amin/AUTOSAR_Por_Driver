@@ -122,6 +122,7 @@
 #define PORT_PIN_B4_MODE_M0PWM2         (4U)
 #define PORT_PIN_B4_MODE_T1CCP0         (7U)
 #define PORT_PIN_B4_MODE_CAN0RX         (8U)
+#define PORT_PIN_B4_MODE_ADC10          (0x0A)
 /**************************************************************
  *                      Modes for Pin B5                      *
  **************************************************************/
@@ -129,6 +130,7 @@
 #define PORT_PIN_B5_MODE_M0PWM3         (4U)
 #define PORT_PIN_B5_MODE_T1CCP1         (7U)
 #define PORT_PIN_B5_MODE_CAN0TX         (8U)
+#define PORT_PIN_B5_MODE_ADC11          (0x0A)
 /**************************************************************
  *                      Modes for Pin B6                      *
  **************************************************************/
@@ -184,6 +186,7 @@
 #define PORT_PIN_D0_MODE_M0PWM6         (4U)
 #define PORT_PIN_D0_MODE_M1PWM0         (5U)
 #define PORT_PIN_D0_MODE_WT2CCP0        (7U)
+#define PORT_PIN_D0_MODE_ADC7           (0x0A)
 /**************************************************************
  *                      Modes for Pin D1                      *
  **************************************************************/
@@ -193,6 +196,7 @@
 #define PORT_PIN_D1_MODE_M0PWM7         (4U)
 #define PORT_PIN_D1_MODE_M1PWM1         (5U)
 #define PORT_PIN_D1_MODE_WT2CCP1        (7U)
+#define PORT_PIN_D1_MODE_ADC6           (0x0A)
 /**************************************************************
  *                      Modes for Pin D2                      *
  **************************************************************/
@@ -201,6 +205,7 @@
 #define PORT_PIN_D2_MODE_M0FAULT0       (4U)
 #define PORT_PIN_D2_MODE_WT3CCP0        (7U)
 #define PORT_PIN_D2_MODE_USB0EPEN       (8U)
+#define PORT_PIN_D2_MODE_ADC5           (0x0A)
 /**************************************************************
  *                      Modes for Pin D3                      *
  **************************************************************/
@@ -209,6 +214,7 @@
 #define PORT_PIN_D3_MODE_IDX0           (6U)
 #define PORT_PIN_D3_MODE_WT3CCP1        (7U)
 #define PORT_PIN_D3_MODE_USB0PFLT       (8U)
+#define PORT_PIN_D3_MODE_ADC4           (0x0A)
 /**************************************************************
  *                      Modes for Pin D4                      *
  **************************************************************/
@@ -237,18 +243,20 @@
  *                      Modes for Pin E0                      *
  **************************************************************/
 #define PORT_PIN_E0_MODE_U7RX           (1U)
+#define PORT_PIN_E0_MODE_ADC3           (0x0A)
 /**************************************************************
  *                      Modes for Pin E1                      *
  **************************************************************/
 #define PORT_PIN_E1_MODE_U7TX           (1U)
+#define PORT_PIN_E1_MODE_ADC2           (0x0A)
 /**************************************************************
  *                      Modes for Pin E2                      *
  **************************************************************/
-
+#define PORT_PIN_E2_MODE_ADC1           (0x0A)
 /**************************************************************
  *                      Modes for Pin E3                      *
  **************************************************************/
-
+#define PORT_PIN_E3_MODE_ADC0           (0x0A)
 /**************************************************************
  *                      Modes for Pin E4                      *
  **************************************************************/
@@ -257,7 +265,7 @@
 #define PORT_PIN_E4_MODE_M0PWM4         (4U)
 #define PORT_PIN_E4_MODE_M1PWM2         (5U)
 #define PORT_PIN_E4_MODE_CAN0RX         (8U)
-
+#define PORT_PIN_E4_MODE_ADC9           (0x0A)
 /**************************************************************
  *                      Modes for Pin E5                      *
  **************************************************************/
@@ -266,7 +274,7 @@
 #define PORT_PIN_E5_MODE_M0PWM5         (4U)
 #define PORT_PIN_E5_MODE_M1PWM3         (5U)
 #define PORT_PIN_E5_MODE_CAN0TX         (8U)
-
+#define PORT_PIN_E5_MODE_ADC8           (0x0A)
 /**************************************************************
  *                      Modes for Pin F0                      *
  **************************************************************/
@@ -363,11 +371,11 @@
  **************************************************************/
 /* default config if the pin not configured */
 #define PORT_PIN_DIR_DEFAULT              PORT_PIN_IN
-#define PORT_PIN_MODE_DEFAULT             0
+#define PORT_PIN_MODE_DEFAULT             PORT_PIN_MODE_DIO
 #define PORT_PIN_DIR_CHANGE_DEFAULT       PORT_DIRECTION_CHANGEABLE
 #define PORT_PIN_MODE_CHANGE_DEFAULT      PORT_MODE_CHANGEABLE
 #define PORT_PIN_RESISTOR_DEFAULT         OFF
-#define PORT_PIN_INIT_VALUE_DEFAULT       0   
+#define PORT_PIN_INIT_VALUE_DEFAULT       STD_LOW   
 /* Configuration values will be stored in the configuration structure */
    
 /**************************************************************
@@ -375,8 +383,8 @@
  **************************************************************/
 #define PORT_A_ID               (Port_PortId) 0
 #define PORT_PIN_A0             (Port_PinType) 0
-#define PORT_PIN_A0_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
-#define PORT_PIN_A0_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A0_DIR         (Port_PinDirectionType)  PORT_PIN_IN
+#define PORT_PIN_A0_MODE        (Port_PinModeType) PORT_PIN_A0_MODE_CAN1RX 
 #define PORT_PIN_A0_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
 #define PORT_PIN_A0_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
 #define PORT_PIN_A0_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
@@ -385,8 +393,8 @@
  *                      Congifg for Pin A1                     *
  **************************************************************/
 #define PORT_PIN_A1             (Port_PinType) 1
-#define PORT_PIN_A1_DIR         (Port_PinDirectionType) PORT_PIN_DIR_DEFAULT
-#define PORT_PIN_A1_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A1_DIR         (Port_PinDirectionType) PORT_PIN_OUT
+#define PORT_PIN_A1_MODE        (Port_PinModeType) PORT_PIN_A1_MODE_U0TX 
 #define PORT_PIN_A1_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
 #define PORT_PIN_A1_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
 #define PORT_PIN_A1_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 

@@ -112,17 +112,21 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
     else{
       /* the other pins do not need any commit register */
     }
+    
     /* set up the direction for the current pin based on */ 
     if( ConfigPtr->channels_config[count].direction == PORT_PIN_OUT )
     {
       SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_DIR_REG_OFFSET), pin_num );
     }
+    
     /* if it is PORT_PIN_IN input pin */
     else{
       /* add to the base register the offest for direction_register */
       CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_DIR_REG_OFFSET), pin_num );
     }
-    /*  */
+    
+    /* put the pin mode as defined in the configuration structure  */
+    
    }
 }
    

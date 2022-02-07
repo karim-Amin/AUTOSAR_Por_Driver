@@ -85,7 +85,7 @@
   #error "The SW version of Port_Cfg.h does not match the expected version"
 #endif
 
- /* include non-AUTOSAR file */
+ /* include non-AUTOSAR file so we do not have to check the version */
 #include "Common_Macros.h"
 
 /******************************************************************************
