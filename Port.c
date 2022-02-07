@@ -175,6 +175,92 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
      
    }
 }
-   
+/* Check if the user configured the SetPinDirection_api on or off */
+#if ( PORT_SET_PIN_DIRECTION_API == STD_ON )
+/************************************************************************************
+* Service Name: Port_SetPinDirection
+* Sync/Async: Synchronous
+* Reentrancy: Reentrant
+* Parameters (in): pin -> port pin id number 
+*                  Direction -> port pin direction 
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: Sets the port pin direction
+************************************************************************************/
+void Port_SetPinDirection (
+   Port_PinType pin,
+   Port_PinDirectionType direction
+)
+{
+
+#if ( PORT_DEV_ERROR_DETECT == STD_ON )
+  /* check invalid port pin number */
+  if( pin >= PORT_NUM_OF_CHANNELS )
+  {
+    Det_ReportError(PORT_MODULE_ID,PORT_INSTANCE_ID,PORT_SET_PIN_DIRECTION_SID,PORT_E_PARAM_PIN);
+  }else{
+    /* do nothing */
+  }
+  /* check if the direction is unchangable */
+  if( Port_Configuration.channels_config[pin].D_change == PORT_DIRECTION_UNCHANGEABLE )
+  {
+    Det_ReportError(PORT_MODULE_ID,PORT_INSTANCE_ID,PORT_SET_PIN_DIRECTION_SID,PORT_E_DIRECTION_UNCHANGABLE);
+  }else{
+    /* do nothing*/
+  }
+  /* check if the Port driver initialized or not */
+  if( Port_Status == PORT_NOT_INITIALIZED )
+  {
+    Det_ReportError(PORT_MODULE_ID,PORT_INSTANCE_ID,PORT_SET_PIN_DIRECTION_SID,PORT_E_UNINIT);
+  }else{
+    /* do nothing */
+  }
+#endif
+  /* to hold the port number */
+  uint8 port_number = Port_Configuration.channels_config[pin].port_num;
+  /* to hold the base address */
+  volatile uint32 * PortGpioPtr_base = NULL_PTR;
+  switch( port_number )
+  {  
+  case 0 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTA_BASE_ADDRESS;
+    break;
+  case 1 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTB_BASE_ADDRESS;
+    break;
+  case 2 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTC_BASE_ADDRESS;
+    break;
+  case 3 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTD_BASE_ADDRESS;
+    break;
+  case 4 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTE_BASE_ADDRESS;
+    break;
+  case 5 : PortGpioPtr_base = (volatile uint32 *) GPIO_PORTF_BASE_ADDRESS;
+    break;
+  default:
+    break;
+  }
+  /* set up the direction for the current pin based on */ 
+    if( direction == PORT_PIN_OUT )
+    {
+      SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), pin );
+    }
+    else{
+      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_DIR_REG_OFFSET), pin );
+    }
+}
+#endif
+
+/************************************************************************************
+* Service Name: Port_RefreshPortDirection
+* Sync/Async: Synchronous
+* Reentrancy: Non-Reentrant
+* Parameters (in): None 
+* Parameters (inout): None
+* Parameters (out): None
+* Return value: None
+* Description: Refrshes port direction 
+************************************************************************************/
+void Port_RefreshPortDirection ( void ){
+  
+}
    
    
