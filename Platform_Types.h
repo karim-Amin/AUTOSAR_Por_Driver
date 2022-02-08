@@ -14,8 +14,8 @@
 #define PLATFORM_TYPES_H
 
 /* Id for the company in the AUTOSAR
- * for example Mohamed Tarek's ID = 1000 :) */
-#define PLATFORM_VENDOR_ID                          (1000U)
+ * for example KARIM's ID = 2000 :) */
+#define PLATFORM_VENDOR_ID                          (2000U)
 
 /*
  * Module Version 1.0.0

@@ -165,7 +165,7 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
     }
     
     if( ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_DIO
-       || ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_ADC )
+       && ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_ADC )
 
     {
       /* set the corresponding bit in AFSEL register*/

@@ -13,8 +13,8 @@
 #define DET_H
 
 /* Id for the company in the AUTOSAR
- * for example Mohamed Tarek's ID = 1000 :) */
-#define DET_VENDOR_ID                 (1000U)
+ * for example karim's ID = 2000 :) */
+#define DET_VENDOR_ID                 (2000U)
 
 /* Det Module Id */
 #define DET_MODULE_ID                 (15U)

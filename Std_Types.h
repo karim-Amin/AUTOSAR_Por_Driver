@@ -17,8 +17,8 @@
 #include "Compiler.h"
 
 /* Id for the company in the AUTOSAR
- * for example Mohamed Tarek's ID = 1000 :) */
-#define STD_TYPES_VENDOR_ID                                  (1000U)
+ * for example Karim's ID = 2000 :) */
+#define STD_TYPES_VENDOR_ID                                  (2000U)
 
 /*
  * Module Version 1.0.0
