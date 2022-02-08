@@ -65,7 +65,7 @@
    ||(PORT_AR_RELEASE_MINOR_VERSION != STD_TYPES_AR_RELEASE_MINOR_VERSION)\
    ||(PORT_AR_RELEASE_PATCH_VERSION != STD_TYPES_AR_RELEASE_PATCH_VERSION))
 
-#error "Incompatable AUTOSAR versions between Port.h and Std_Types.h";
+  #error "Incompatable AUTOSAR versions between Port.h and Std_Types.h";
 #endif
    
 /* Port Pre-Compile Configuration Header file */
@@ -94,6 +94,8 @@
 #define PORT_UNLOCK_MAGIC_NUMBER        0x4C4F434B
 #define PORT_CTL_REG_PIN_VALUE_WIDTH    4U
 #define PORT_MAX_MODE_VALUE             14U
+/* define total number of pins in the micro */
+#define PORT_NUM_OF_CHANNELS                 (43U)
 /******************************************************************************
  *                      API Service Id Macros                                 *
 ******************************************************************************/
@@ -293,5 +295,6 @@ void Port_SetPinMode (
 
 /* Extern PB structures to be used by Port and other modules */
 extern const Port_ConfigType Port_Configuration;
+/* Extern list of the configured pins to be able to refreshe only the configured pins */
 extern const uint8 Port_configured_pins[PORT_NUM_OF_CONFIG_PINS];
 #endif /* PORT_H */
