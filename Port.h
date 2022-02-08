@@ -95,7 +95,8 @@
 #define PORT_CTL_REG_PIN_VALUE_WIDTH    4U
 #define PORT_MAX_MODE_VALUE             14U
 /* define total number of pins in the micro */
-#define PORT_NUM_OF_CHANNELS                 (43U)
+#define PORT_NUM_OF_CHANNELS            (43U)
+#define PORT_CTL_MASK                   0x0000000F
 /******************************************************************************
  *                      API Service Id Macros                                 *
 ******************************************************************************/

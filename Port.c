@@ -114,11 +114,14 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
     else{
       /* the other pins do not need any commit register */
     }
+    /* Clear the PMCx bits for this pin */
+    *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_CTL_REG_OFFSET) &= ~(PORT_CTL_MASK << (ConfigPtr->channels_config[count].pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH));     
     
     /* set up the direction for the current pin based on */ 
     if( ConfigPtr->channels_config[count].direction == PORT_PIN_OUT )
     {
       SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_DIR_REG_OFFSET), pin_num );
+      /* Provide initial values */ 
       /* if the pin is output set the initial value */
       if( ConfigPtr->channels_config[count].initial_value == STD_HIGH )
       {
@@ -131,12 +134,39 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
     }
     
     /* if it is PORT_PIN_IN input pin */
-    else{
-      /* add to the base register the offest for direction_register */
-      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_DIR_REG_OFFSET), pin_num );
+    else if( ConfigPtr->channels_config[count].direction == PORT_PIN_IN ){
+      
+    /* add to the base register the offest for direction_register */
+    CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_DIR_REG_OFFSET), pin_num );
+    
+    /* put the pull-up and pull-down resistor configuration */
+    if( ConfigPtr->channels_config[count].resistor == PULL_UP){ 
+      SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_PULL_UP_REG_OFFSET), pin_num );
+      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_PULL_DOWN_REG_OFFSET), pin_num );
     }
     
-    if( ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_DIO)
+    else if ( ConfigPtr->channels_config[count].resistor == PULL_DOWN ){
+       SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_PULL_DOWN_REG_OFFSET), pin_num );
+       CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_PULL_UP_REG_OFFSET), pin_num );
+    }
+    
+    /* if the resistor configuration is OFF*/
+    else if ( ConfigPtr->channels_config[count].resistor == OFF ){
+      /* disable two modes pull up and pull down */
+      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_PULL_UP_REG_OFFSET), pin_num );
+      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_PULL_DOWN_REG_OFFSET), pin_num );
+    }
+    else{
+      /* do nothing */      
+    }
+    }
+    else{
+      /* do nothing */
+    }
+    
+    if( ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_DIO
+       || ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_ADC )
+
     {
       /* set the corresponding bit in AFSEL register*/
       SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_ALT_FUNC_REG_OFFSET), pin_num );
@@ -151,6 +181,8 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
     {
        /* set the corresponding bit in GPIODEN register (DIGITAL ENABLE )*/
       SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_DIGITAL_ENABLE_REG_OFFSET), pin_num );
+       /* clear the corresponding bit in AMSEL register (ANALOG ENABLE )*/
+      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_ANALOG_MODE_SEL_REG_OFFSET), pin_num );
     }
     else
     {
@@ -159,22 +191,15 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
         /* set the corresponding bit in AMSEL register (ANALOG ENABLE )*/
       SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_ANALOG_MODE_SEL_REG_OFFSET), pin_num );
     }
-    /* put the pin mode as defined in the configuration structure  */
+    if( ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_ADC)
+    {
+    /* put the pin mode as defined in the configuration structure in CTRL REGISTER */
     *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_CTL_REG_OFFSET) |= ((ConfigPtr->channels_config[count].Mode) << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH));
-    /* put the pull-up and pull-down resistor configuration */
-    if( ConfigPtr->channels_config[count].resistor == PULL_UP){ 
-      SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_PULL_UP_REG_OFFSET), pin_num );
     }
-    else if ( ConfigPtr->channels_config[count].resistor == PULL_DOWN ){
-       SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_PULL_DOWN_REG_OFFSET), pin_num );
-    }
-    /* if the resistor configuration is OFF*/
     else{
-      /* disable two modes pull up and pull down */
-      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_PULL_UP_REG_OFFSET), pin_num );
-      CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_PULL_DOWN_REG_OFFSET), pin_num );
+    /* put zero in CTRL REGISTER in case of ADC MODE */
+    *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_CTL_REG_OFFSET) &= ~(PORT_CTL_MASK << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH)); 
     }
-     
    }
 }
 /* Check if the user configured the SetPinDirection_api on or off */
@@ -283,6 +308,7 @@ void Port_RefreshPortDirection ( void ){
   Port_PinDirectionType direction;
    /* to hold the base address */
   volatile uint32 * PortGpioPtr_base = NULL_PTR;
+  /* loop until the number of configured pins */
   for( i=0 ; i < PORT_NUM_OF_CONFIG_PINS ;i++)
   {
     /* get every configured pin from the array of configured pins */
@@ -425,7 +451,17 @@ void Port_SetPinMode (
   default:
     break;
   }
-  /* put the pin mode as defined in the configuration structure  */
-  *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) |= (Mode) << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH);
+  /* Clear the PMCx bits for this pin */
+   *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) &= ~(PORT_CTL_MASK << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH)); 
+  
+  if( Mode != PORT_PIN_MODE_ADC)
+    {
+    /* put the pin mode as defined in the configuration structure in CTRL REGISTER */
+    *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) |= (Mode << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH));
+    }
+    else{
+    /* put zero in CTRL REGISTER in case of ADC MODE */
+    *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) &= ~(PORT_CTL_MASK << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH)); 
+    }
 }
 #endif  
