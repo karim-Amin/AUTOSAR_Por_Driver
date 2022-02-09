@@ -165,7 +165,7 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
     }
     
     if( ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_DIO
-       && ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_ADC )
+       && ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_ANALOG )
 
     {
       /* set the corresponding bit in AFSEL register*/
@@ -177,7 +177,7 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
       CLEAR_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_ALT_FUNC_REG_OFFSET), pin_num );
     }
       /* check the need for analog or digital modes */
-     if( ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_ADC)
+     if( ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_ANALOG)
     {
        /* set the corresponding bit in GPIODEN register (DIGITAL ENABLE )*/
       SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_DIGITAL_ENABLE_REG_OFFSET), pin_num );
@@ -191,7 +191,7 @@ void Port_Init(const Port_ConfigType *ConfigPtr )
         /* set the corresponding bit in AMSEL register (ANALOG ENABLE )*/
       SET_BIT( *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_ANALOG_MODE_SEL_REG_OFFSET), pin_num );
     }
-    if( ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_ADC)
+    if( ConfigPtr->channels_config[count].Mode != PORT_PIN_MODE_ANALOG)
     {
     /* put the pin mode as defined in the configuration structure in CTRL REGISTER */
     *(volatile uint32 *)((volatile uint8 *)PortGpio_Ptr + PORT_CTL_REG_OFFSET) |= ((ConfigPtr->channels_config[count].Mode) << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH));
