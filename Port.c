@@ -454,7 +454,7 @@ void Port_SetPinMode (
   /* Clear the PMCx bits for this pin */
    *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) &= ~(PORT_CTL_MASK << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH)); 
   
-  if( Mode != PORT_PIN_MODE_ADC)
+  if( Mode != PORT_PIN_MODE_ANALOG)
     {
     /* put the pin mode as defined in the configuration structure in CTRL REGISTER */
     *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) |= (Mode << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH));

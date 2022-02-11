@@ -399,11 +399,11 @@
  **************************************************************/
 #define PORT_PIN_A1             (Port_PinType) 1
 #define PORT_PIN_A1_DIR         (Port_PinDirectionType) PORT_PIN_OUT
-#define PORT_PIN_A1_MODE        (Port_PinModeType) PORT_PIN_MODE_DEFAULT 
+#define PORT_PIN_A1_MODE        (Port_PinModeType) PORT_PIN_A1_MODE_U0TX 
 #define PORT_PIN_A1_DIR_CHANGE  (Port_DirectionChangeType) PORT_PIN_DIR_CHANGE_DEFAULT 
 #define PORT_PIN_A1_MODE_CHANGE (Port_ModeChangeType)  PORT_PIN_MODE_CHANGE_DEFAULT 
 #define PORT_PIN_A1_RESISTOR    (Port_InternalResistor) PORT_PIN_RESISTOR_DEFAULT 
-#define PORT_PIN_A1_INIT_VALUE  (Port_PinLevelInit) STD_HIGH 
+#define PORT_PIN_A1_INIT_VALUE  (Port_PinLevelInit) STD_LOW
 /**************************************************************
  *                      Congifg for Pin A2                     *
  **************************************************************/
