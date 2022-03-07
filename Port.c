@@ -454,14 +454,39 @@ void Port_SetPinMode (
   /* Clear the PMCx bits for this pin */
    *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) &= ~(PORT_CTL_MASK << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH)); 
   
-  if( Mode != PORT_PIN_MODE_ANALOG)
-    {
-    /* put the pin mode as defined in the configuration structure in CTRL REGISTER */
-    *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) |= (Mode << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH));
-    }
-    else{
-    /* put zero in CTRL REGISTER in case of ADC MODE */
-    *(volatile uint32 *)((volatile uint8 *)PortGpioPtr_base + PORT_CTL_REG_OFFSET) &= ~(PORT_CTL_MASK << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH)); 
-    }
+   if (Mode != PORT_PIN_MODE_DIO && Mode != PORT_PIN_MODE_ANALOG)
+   {
+       /* set the corresponding bit in AFSEL register */
+       SET_BIT(*(volatile uint32*)((volatile uint8*)PortGpioPtr_base + PORT_ALT_FUNC_REG_OFFSET), pin_num);
+   }
+   else
+   {
+       /* clear the corresponding bit in AFSEL register*/
+       CLEAR_BIT(*(volatile uint32*)((volatile uint8*)PortGpioPtr_base + PORT_ALT_FUNC_REG_OFFSET), pin_num);
+   }
+   /* check the need for analog or digital modes */
+   if (Mode != PORT_PIN_MODE_ANALOG)
+   {
+       /* set the corresponding bit in GPIODEN register (DIGITAL ENABLE )*/
+       SET_BIT(*(volatile uint32*)((volatile uint8*)PortGpioPtr_base + PORT_DIGITAL_ENABLE_REG_OFFSET), pin_num);
+       /* clear the corresponding bit in AMSEL register (ANALOG ENABLE )*/
+       CLEAR_BIT(*(volatile uint32*)((volatile uint8*)PortGpioPtr_base + PORT_ANALOG_MODE_SEL_REG_OFFSET), pin_num);
+   }
+   else
+   {
+       /* clear the corresponding bit in GPIODEN register (DIGITAL DISABLE )*/
+       CLEAR_BIT(*(volatile uint32*)((volatile uint8*)PortGpioPtr_base + PORT_DIGITAL_ENABLE_REG_OFFSET), pin_num);
+       /* set the corresponding bit in AMSEL register (ANALOG ENABLE )*/
+       SET_BIT(*(volatile uint32*)((volatile uint8*)PortGpioPtr_base + PORT_ANALOG_MODE_SEL_REG_OFFSET), pin_num);
+   }
+   if (Mode != PORT_PIN_MODE_ANALOG)
+   {
+       /* put the pin mode as defined in the configuration structure in CTRL REGISTER */
+       *(volatile uint32*)((volatile uint8*)PortGpioPtr_base + PORT_CTL_REG_OFFSET) |= (Mode) << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH);
+   }
+   else {
+       /* put zero in CTRL REGISTER in case of ADC MODE */
+       *(volatile uint32*)((volatile uint8*)PortGpioPtr_base + PORT_CTL_REG_OFFSET) &= ~(PORT_CTL_MASK << (pin_num * PORT_CTL_REG_PIN_VALUE_WIDTH));
+   }
 }
 #endif  

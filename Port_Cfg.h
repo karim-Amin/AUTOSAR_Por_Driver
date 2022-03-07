@@ -154,7 +154,7 @@
 #define PORT_PIN_C4_MODE_IDX1           (6U)
 #define PORT_PIN_C4_MODE_WT0CCP0        (7U)
 #define PORT_PIN_C4_MODE_U1RTS          (8U)
-#define PORT_PIN_C4_MODE_C1-            (PORT_PIN_MODE_ANALOG)
+#define PORT_PIN_C4_MODE_C1_MINUS       (PORT_PIN_MODE_ANALOG)
 /**************************************************************
  *                      Modes for Pin C5                      *
  **************************************************************/
@@ -164,7 +164,7 @@
 #define PORT_PIN_C5_MODE_PHA1           (6U)
 #define PORT_PIN_C5_MODE_WT0CCP1        (7U)
 #define PORT_PIN_C5_MODE_U1CTS          (8U)
-#define PORT_PIN_C5_MODE_C1+            (PORT_PIN_MODE_ANALOG)
+#define PORT_PIN_C5_MODE_C1_PLUS        (PORT_PIN_MODE_ANALOG)
 /**************************************************************
  *                      Modes for Pin C6                      *
  **************************************************************/
@@ -172,14 +172,14 @@
 #define PORT_PIN_C6_MODE_PHB1           (6U)
 #define PORT_PIN_C6_MODE_WT1CCP0        (7U)
 #define PORT_PIN_C6_MODE_USB0EPEN       (8U)
-#define PORT_PIN_C6_MODE_C0+            (PORT_PIN_MODE_ANALOG)
+#define PORT_PIN_C6_MODE_C0_PLUS        (PORT_PIN_MODE_ANALOG)
 /**************************************************************
  *                      Modes for Pin C7                      *
  **************************************************************/
 #define PORT_PIN_C7_MODE_U3TX           (1U)
 #define PORT_PIN_C7_MODE_WT1CCP1        (7U)
 #define PORT_PIN_C7_MODE_USB0PFLT       (8U)
-#define PORT_PIN_C7_MODE_C1-            (PORT_PIN_MODE_ANALOG)
+#define PORT_PIN_C7_MODE_C1_MINUS       (PORT_PIN_MODE_ANALOG)
 /**************************************************************
  *                      Modes for Pin D0                      *
  **************************************************************/
